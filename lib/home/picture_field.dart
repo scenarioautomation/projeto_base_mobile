@@ -4,7 +4,10 @@ import 'package:flutter/material.dart';
 import 'package:projeto_base_mobile/home/select_picture_widget.dart';
 
 class PictureField extends StatefulWidget {
-  const PictureField({super.key});
+
+  final void Function(String imagePath) onSelect;
+
+  const PictureField({super.key, required this.onSelect});
 
   @override
   State<PictureField> createState() => _AddHomePictureFieldState();
@@ -28,6 +31,7 @@ class _AddHomePictureFieldState extends State<PictureField> {
   void _onPictureSelect(String imagePath) {
     setState(() {
       currentSelectedPicture = imagePath;
+      widget.onSelect(imagePath);
     });
   }
 }
