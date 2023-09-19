@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
+import 'package:projeto_base_mobile/home/home_add_page.dart';
 import 'package:projeto_base_mobile/home/home_list_item.dart';
 
 class HomeListPage extends StatefulWidget {
@@ -19,7 +19,13 @@ class _HomeListPageState extends State<HomeListPage> {
         actions: [
           IconButton(
             icon: const Icon(Icons.add),
-            onPressed: () {},
+            onPressed: () {
+              Navigator.of(context).push(
+                MaterialPageRoute(
+                  builder: (context) => const HomeAddPage(),
+                ),
+              );
+            },
           ),
         ],
       ),
