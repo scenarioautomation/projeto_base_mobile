@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:projeto_base_mobile/home/picture_field.dart';
 
 class HomeAddPage extends StatefulWidget {
   const HomeAddPage({super.key});
@@ -30,30 +31,21 @@ class _HomeAddPageState extends State<HomeAddPage> {
         child: Form(
           key: _formKey,
           child: Container(
-            margin: const EdgeInsets.symmetric(horizontal: 24, vertical: 48),
+            margin: const EdgeInsets.symmetric(horizontal: 24, vertical: 16),
             child: SingleChildScrollView(
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  const Row(
-                    children: [
-                      Icon(
-                        Icons.home_sharp,
-                        color: Colors.green,
-                      ),
-                      Text(
-                        'Name',
-                        style: TextStyle(fontWeight: FontWeight.bold),
-                      ),
-                    ],
-                  ),
                   TextFormField(
                     decoration: const InputDecoration(
+                      hintText: "Name",
                       focusedBorder: UnderlineInputBorder(
-                        borderSide: BorderSide(color: Colors.green), // Cor de foco
+                        borderSide:
+                            BorderSide(color: Colors.green), // Cor de foco
                       ),
                       enabledBorder: UnderlineInputBorder(
-                        borderSide: BorderSide(color: Colors.grey), // Cor padrão
+                        borderSide:
+                            BorderSide(color: Colors.grey), // Cor padrão
                       ),
                     ),
                     cursorColor: Colors.green,
@@ -61,32 +53,7 @@ class _HomeAddPageState extends State<HomeAddPage> {
                   const SizedBox(
                     height: 24,
                   ),
-                  Row(
-                    children: [
-                      Expanded(
-                        child: Container(
-                          height: 100,
-                          decoration: BoxDecoration(
-                            border: Border.all(color: Colors.black, width: 0.4),
-                            color: Colors.grey[200],
-                            borderRadius:
-                                const BorderRadius.all(Radius.circular(8)),
-                          ),
-                          child: const Column(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              Icon(
-                                Icons.image,
-                                color: Colors.black26,
-                                size: 36,
-                              ),
-                              Text('Add picture'),
-                            ],
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
+                  const PictureField(),
                   Padding(
                     padding: const EdgeInsets.symmetric(vertical: 16),
                     child: ElevatedButton(
@@ -97,7 +64,7 @@ class _HomeAddPageState extends State<HomeAddPage> {
                         _removeFocus();
                         if (_formKey.currentState!.validate()) {}
                       },
-                      child: const Text('Add'),
+                      child: const Text('Create'),
                     ),
                   ),
                 ],
