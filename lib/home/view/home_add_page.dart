@@ -133,7 +133,7 @@ class _HomeAddPageState extends State<HomeAddPage> {
   }
 
   bool _validateFields() {
-    return textEditingController.value.text.isNotEmpty && selectedImage != null;
+    return textEditingController.value.text.trim().isNotEmpty && selectedImage != null;
   }
 
   void _removeFocus() {

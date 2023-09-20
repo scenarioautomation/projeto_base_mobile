@@ -19,8 +19,10 @@ class _HomeListPageState extends State<HomeListPage> with AfterLayoutMixin {
   final store = HomeViewModel();
 
   @override
-  FutureOr<void> afterFirstLayout(BuildContext context) async {
-    await store.initHomes();
+  FutureOr<void> afterFirstLayout(BuildContext context) {
+    store.initHomes().whenComplete(() {
+        setState(() {});
+    });
   }
 
   @override
