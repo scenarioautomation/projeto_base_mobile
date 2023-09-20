@@ -13,6 +13,7 @@ class HomeListPage extends StatefulWidget {
 
 class _HomeListPageState extends State<HomeListPage> {
   final List<HomeModel> homes = [];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -42,9 +43,62 @@ class _HomeListPageState extends State<HomeListPage> {
         ],
       ),
       body: ListView.builder(
-        itemBuilder: (context, index) => HomeListItem(home: homes[index]),
+        itemBuilder: (context, index) {
+          var pressedRemove = false;
+          return Dismissible(
+            key: GlobalKey(),
+            confirmDismiss: (direction) async {
+              await showDialog(
+                  context: context,
+                  builder: (context) {
+                    return AlertDialog(
+                      title:
+                          Text("The home ${homes[index].name} will be removed"),
+                      actions: [
+                        ElevatedButton(
+                          style: ElevatedButton.styleFrom(
+                            backgroundColor: Colors.black,
+                          ),
+                          onPressed: () {
+                            Navigator.pop(context);
+                          },
+                          child: const Text(
+                            'Cancel',
+                            style: TextStyle(color: Colors.white),
+                          ),
+                        ),
+                        ElevatedButton(
+                          style: ElevatedButton.styleFrom(
+                            backgroundColor: ScenarioColors.accent,
+                          ),
+                          onPressed: () {
+                            pressedRemove = true;
+                            _removeHome(index);
+                            Navigator.pop(context);
+                          },
+                          child: const Text(
+                            'Remove',
+                            style: TextStyle(color: Colors.black),
+                          ),
+                        ),
+                      ],
+                    );
+                  });
+              return pressedRemove;
+            },
+            child: HomeListItem(
+              home: homes[index],
+            ),
+          );
+        },
         itemCount: homes.length,
       ),
     );
+  }
+
+  void _removeHome(int index) {
+    setState(() {
+      homes.removeAt(index);
+    });
   }
 }
