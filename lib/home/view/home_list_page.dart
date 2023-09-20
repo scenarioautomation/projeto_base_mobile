@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:after_layout/after_layout.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:projeto_base_mobile/general/scenario_colors.dart';
 import 'package:projeto_base_mobile/home/view/home_add_page.dart';
@@ -28,9 +29,9 @@ class _HomeListPageState extends State<HomeListPage> with AfterLayoutMixin {
       appBar: AppBar(
         backgroundColor: ScenarioColors.accent,
         title: const Text(
-          'Homes',
+          "homes",
           style: TextStyle(color: ScenarioColors.dark),
-        ),
+        ).tr(),
         actions: [
           IconButton(
             icon: const Icon(Icons.add, color: ScenarioColors.dark),
@@ -69,11 +70,11 @@ class _HomeListPageState extends State<HomeListPage> with AfterLayoutMixin {
                     const SizedBox(
                       height: 10,
                     ),
-                    const Text('Remove',
+                    const Text('remove',
                         style: TextStyle(
                             color: ScenarioColors.delete,
                             fontSize: 24,
-                            fontWeight: FontWeight.bold)),
+                            fontWeight: FontWeight.bold)).tr(),
                     Text(home.name,
                         style: const TextStyle(
                             color: ScenarioColors.dark,
@@ -88,7 +89,7 @@ class _HomeListPageState extends State<HomeListPage> with AfterLayoutMixin {
                   context: context,
                   builder: (context) {
                     return AlertDialog(
-                      title: Text("The home ${home.name} will be removed"),
+                      title: const Text("homeWillBeRemoved").tr(args: [home.name]),
                       actions: [
                         ElevatedButton(
                           style: ElevatedButton.styleFrom(
@@ -98,9 +99,9 @@ class _HomeListPageState extends State<HomeListPage> with AfterLayoutMixin {
                             Navigator.pop(context);
                           },
                           child: const Text(
-                            'Cancel',
+                            'cancel',
                             style: TextStyle(color: ScenarioColors.secondary),
-                          ),
+                          ).tr(),
                         ),
                         ElevatedButton(
                           style: ElevatedButton.styleFrom(
@@ -113,9 +114,9 @@ class _HomeListPageState extends State<HomeListPage> with AfterLayoutMixin {
                             });
                           },
                           child: const Text(
-                            'Remove',
+                            'remove',
                             style: TextStyle(color: ScenarioColors.secondary),
-                          ),
+                          ).tr(),
                         ),
                       ],
                     );

@@ -1,0 +1,15 @@
+{
+  "homes": "Casas",
+  "remove": "Remover",
+  "homeWillBeRemoved": "A casa {} será removida",
+  "cancel": "Cancelar",
+  "add": {
+    "addHome" : "Adicionar casa",
+    "name" : "Nome",
+    "selectPicture" : "Selecionar imagem",
+    "changePicture" : "Mudar imagem",
+    "create" : "Criar",
+    "fields_alert": "Por favor, escolha o nome e a foto da casa.",
+    "ok": "OK"
+  }
+}

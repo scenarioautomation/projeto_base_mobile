@@ -1,5 +1,6 @@
 import 'dart:io';
 
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:projeto_base_mobile/home/view/widgets/select_picture_widget.dart';
 
@@ -19,7 +20,7 @@ class _AddHomePictureFieldState extends State<PictureFieldWidget> {
   @override
   Widget build(BuildContext context) {
     String? picture = currentSelectedPicture;
-    String title = picture == null ? "Select picture" : "Change picture";
+    String title = picture == null ? "add.selectPicture".tr() : "add.changePicture".tr();
     return Column(
       children: [
         if (picture != null) Image.file(File(picture)),

@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:projeto_base_mobile/general/scenario_colors.dart';
 import 'package:projeto_base_mobile/home/model/home_model.dart';
@@ -26,9 +27,9 @@ class _HomeAddPageState extends State<HomeAddPage> {
       appBar: AppBar(
         backgroundColor: ScenarioColors.accent,
         title: const Text(
-          'Add Home',
+          'add.addHome',
           style: TextStyle(color: ScenarioColors.dark),
-        ),
+        ).tr(),
         leading: IconButton(
           icon: const Icon(Icons.keyboard_backspace_sharp, color: ScenarioColors.dark),
           onPressed: () {
@@ -50,13 +51,13 @@ class _HomeAddPageState extends State<HomeAddPage> {
                 children: [
                   TextFormField(
                     controller: textEditingController,
-                    decoration: const InputDecoration(
-                      hintText: "Name",
-                      focusedBorder: UnderlineInputBorder(
+                    decoration:  InputDecoration(
+                      hintText: "add.name".tr(),
+                      focusedBorder: const UnderlineInputBorder(
                         borderSide: BorderSide(
                             color: ScenarioColors.accent),
                       ),
-                      enabledBorder: UnderlineInputBorder(
+                      enabledBorder: const UnderlineInputBorder(
                         borderSide:
                             BorderSide(color: ScenarioColors.grey),
                       ),
@@ -82,9 +83,9 @@ class _HomeAddPageState extends State<HomeAddPage> {
                         _addHome();
                       },
                       child: const Text(
-                        'Create',
+                        'add.create',
                         style: TextStyle(color: ScenarioColors.dark),
-                      ),
+                      ).tr(),
                     ),
                   ),
                 ],
@@ -114,7 +115,7 @@ class _HomeAddPageState extends State<HomeAddPage> {
     showDialog(
       context: context,
       builder: (context) => AlertDialog(
-        title: const Text("Please, enter the home name and select its picture."),
+        title: const Text("add.fields_alert").tr(),
         actions: [ElevatedButton(
           style: ElevatedButton.styleFrom(
             backgroundColor: ScenarioColors.accent,
@@ -123,9 +124,9 @@ class _HomeAddPageState extends State<HomeAddPage> {
             Navigator.pop(context);
           },
           child: const Text(
-            'OK',
+            'add.ok',
             style: TextStyle(color: ScenarioColors.dark),
-          ),
+          ).tr(),
         ),],
       ),
     );

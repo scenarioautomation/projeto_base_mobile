@@ -1,0 +1,15 @@
+{
+  "homes": "Homes",
+  "remove": "Remove",
+  "homeWillBeRemoved": "The home {} will be removed",
+  "cancel": "Cancel",
+  "add": {
+    "addHome" : "Add home",
+    "name" : "Name",
+    "selectPicture" : "Select picture",
+    "changePicture" : "Change picture",
+    "create" : "Create",
+    "fields_alert": "Please, enter the home name and select its picture.",
+    "ok": "OK"
+  }
+}
