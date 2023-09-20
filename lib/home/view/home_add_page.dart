@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:projeto_base_mobile/general/scenario_colors.dart';
 import 'package:projeto_base_mobile/home/model/home_model.dart';
-import 'package:projeto_base_mobile/home/picture_field.dart';
+import 'package:projeto_base_mobile/home/view/widgets/picture_field_widget.dart';
 
 class HomeAddPage extends StatefulWidget {
 
@@ -66,7 +66,7 @@ class _HomeAddPageState extends State<HomeAddPage> {
                   const SizedBox(
                     height: 24,
                   ),
-                  PictureField(
+                  PictureFieldWidget(
                     onSelect: (String imagePath) {
                       selectedImage = imagePath;
                     },

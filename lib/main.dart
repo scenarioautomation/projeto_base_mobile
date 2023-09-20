@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:projeto_base_mobile/home/home_list_page.dart';
+import 'package:projeto_base_mobile/home/view/home_list_page.dart';
 
 void main() {
 

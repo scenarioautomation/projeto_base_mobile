@@ -1,19 +1,19 @@
 import 'dart:io';
 
 import 'package:flutter/material.dart';
-import 'package:projeto_base_mobile/home/select_picture_widget.dart';
+import 'package:projeto_base_mobile/home/view/widgets/select_picture_widget.dart';
 
-class PictureField extends StatefulWidget {
+class PictureFieldWidget extends StatefulWidget {
 
   final void Function(String imagePath) onSelect;
 
-  const PictureField({super.key, required this.onSelect});
+  const PictureFieldWidget({super.key, required this.onSelect});
 
   @override
-  State<PictureField> createState() => _AddHomePictureFieldState();
+  State<PictureFieldWidget> createState() => _AddHomePictureFieldState();
 }
 
-class _AddHomePictureFieldState extends State<PictureField> {
+class _AddHomePictureFieldState extends State<PictureFieldWidget> {
   String? currentSelectedPicture;
 
   @override

@@ -1,7 +1,7 @@
-import 'package:projeto_base_mobile/general/home_list_parser.dart';
+import 'package:projeto_base_mobile/home/data/home_list_parser.dart';
 import 'package:projeto_base_mobile/home/model/home_model.dart';
 
-class HomeController {
+class HomeViewModel {
   List<HomeModel> _homes = [];
 
   final parser = HomeListParser();

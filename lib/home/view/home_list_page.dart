@@ -3,9 +3,9 @@ import 'dart:async';
 import 'package:after_layout/after_layout.dart';
 import 'package:flutter/material.dart';
 import 'package:projeto_base_mobile/general/scenario_colors.dart';
-import 'package:projeto_base_mobile/home/home_add_page.dart';
-import 'package:projeto_base_mobile/home/home_controller.dart';
-import 'package:projeto_base_mobile/home/home_list_item.dart';
+import 'package:projeto_base_mobile/home/view/home_add_page.dart';
+import 'package:projeto_base_mobile/home/viewmodel/home_view_model.dart';
+import 'package:projeto_base_mobile/home/view/home_list_item.dart';
 
 class HomeListPage extends StatefulWidget {
   const HomeListPage({super.key});
@@ -15,11 +15,11 @@ class HomeListPage extends StatefulWidget {
 }
 
 class _HomeListPageState extends State<HomeListPage> with AfterLayoutMixin {
-  final controller = HomeController();
+  final store = HomeViewModel();
 
   @override
   FutureOr<void> afterFirstLayout(BuildContext context) async {
-    await controller.initHomes();
+    await store.initHomes();
   }
 
   @override
@@ -39,7 +39,7 @@ class _HomeListPageState extends State<HomeListPage> with AfterLayoutMixin {
                 MaterialPageRoute(
                   builder: (context) => HomeAddPage(
                     onAdd: (home) async {
-                      controller.addHome(home).whenComplete(() {
+                      store.addHome(home).whenComplete(() {
                         setState(() {});
                       });
                     },
@@ -53,7 +53,7 @@ class _HomeListPageState extends State<HomeListPage> with AfterLayoutMixin {
       body: ListView.builder(
         itemBuilder: (context, index) {
           var pressedRemove = false;
-          var home = controller.homes[index];
+          var home = store.homes[index];
           return Dismissible(
             key: ValueKey(home),
             dismissThresholds: const {DismissDirection.endToStart: 0.9},
@@ -108,7 +108,7 @@ class _HomeListPageState extends State<HomeListPage> with AfterLayoutMixin {
                           ),
                           onPressed: () async {
                             pressedRemove = true;
-                            controller.removeHome(home).whenComplete(() {
+                            store.removeHome(home).whenComplete(() {
                               Navigator.pop(context);
                             });
                           },
@@ -127,7 +127,7 @@ class _HomeListPageState extends State<HomeListPage> with AfterLayoutMixin {
             ),
           );
         },
-        itemCount: controller.homes.length,
+        itemCount: store.homes.length,
       ),
     );
   }
