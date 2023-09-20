@@ -45,15 +45,42 @@ class _HomeListPageState extends State<HomeListPage> {
       body: ListView.builder(
         itemBuilder: (context, index) {
           var pressedRemove = false;
+          var home = homes[index];
           return Dismissible(
-            key: GlobalKey(),
+            key: ValueKey(home),
+            dismissThresholds: const {DismissDirection.endToStart: 0.9},
+            direction: DismissDirection.endToStart,
+            background: Container(
+              color: Colors.grey,
+              child: Padding(
+                padding: const EdgeInsets.all(15),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    const Icon(Icons.delete_rounded, color: Colors.black),
+                    const SizedBox(
+                      height: 10,
+                    ),
+                    const Text('Remove',
+                        style: TextStyle(
+                            color: Color(0xFF8D0F05),
+                            fontSize: 24,
+                            fontWeight: FontWeight.bold)),
+                    Text(home.name,
+                        style: const TextStyle(
+                            color: Colors.black,
+                            fontSize: 24,
+                            fontWeight: FontWeight.bold)),
+                  ],
+                ),
+              ),
+            ),
             confirmDismiss: (direction) async {
               await showDialog(
                   context: context,
                   builder: (context) {
                     return AlertDialog(
-                      title:
-                          Text("The home ${homes[index].name} will be removed"),
+                      title: Text("The home ${home.name} will be removed"),
                       actions: [
                         ElevatedButton(
                           style: ElevatedButton.styleFrom(
@@ -69,7 +96,7 @@ class _HomeListPageState extends State<HomeListPage> {
                         ),
                         ElevatedButton(
                           style: ElevatedButton.styleFrom(
-                            backgroundColor: ScenarioColors.accent,
+                            backgroundColor: const Color(0xFF8D0F05),
                           ),
                           onPressed: () {
                             pressedRemove = true;
@@ -78,7 +105,7 @@ class _HomeListPageState extends State<HomeListPage> {
                           },
                           child: const Text(
                             'Remove',
-                            style: TextStyle(color: Colors.black),
+                            style: TextStyle(color: Colors.white),
                           ),
                         ),
                       ],
@@ -87,7 +114,7 @@ class _HomeListPageState extends State<HomeListPage> {
               return pressedRemove;
             },
             child: HomeListItem(
-              home: homes[index],
+              home: home,
             ),
           );
         },
