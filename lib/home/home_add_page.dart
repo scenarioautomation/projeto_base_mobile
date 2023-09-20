@@ -5,7 +5,7 @@ import 'package:projeto_base_mobile/home/picture_field.dart';
 
 class HomeAddPage extends StatefulWidget {
 
-  final void Function(HomeModel home) onAdd;
+  final Future<void> Function(HomeModel home) onAdd;
 
   const HomeAddPage({super.key, required this.onAdd});
 
@@ -96,14 +96,15 @@ class _HomeAddPageState extends State<HomeAddPage> {
     );
   }
 
-  void _addHome() {
+  Future<void> _addHome() async {
     if (_validateFields()) {
       final name = textEditingController.value.text;
       final image = selectedImage;
       if(image == null) return;
       final home = HomeModel(name: name, imagePath: image);
-      widget.onAdd(home);
-      Navigator.pop(context);
+      widget.onAdd(home).whenComplete(() {
+        Navigator.pop(context);
+      });
     } else {
       _showErrorAlert();
     }
