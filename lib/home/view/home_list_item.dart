@@ -2,6 +2,7 @@ import 'dart:io';
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
+import 'package:projeto_base_mobile/general/scenario_colors.dart';
 import 'package:projeto_base_mobile/home/model/home_model.dart';
 
 class HomeListItem extends StatefulWidget {
@@ -31,7 +32,7 @@ class _HomeListItemState extends State<HomeListItem> {
             child: BackdropFilter(
               filter: ImageFilter.blur(sigmaX: 3, sigmaY: 3),
               child: Container(
-                color: Colors.black.withOpacity(0.5),
+                color: ScenarioColors.dark.withOpacity(0.5),
                 child: Center(
                   child: Stack(
                     children: [
@@ -45,7 +46,7 @@ class _HomeListItemState extends State<HomeListItem> {
                                   flex: 1,
                                   child: Text(
                                     widget.home.name,
-                                    style: const TextStyle(color: Colors.white, fontSize: 22),
+                                    style: const TextStyle(color: ScenarioColors.secondary, fontSize: 22),
                                     maxLines: 1,
                                     overflow: TextOverflow.ellipsis,
                                     textAlign: TextAlign.start,
@@ -58,7 +59,7 @@ class _HomeListItemState extends State<HomeListItem> {
                             right: 10,
                             child: Icon(
                               Icons.navigate_next_rounded,
-                              color: Colors.white,
+                              color: ScenarioColors.secondary,
                             ),
                           ),
                         ],

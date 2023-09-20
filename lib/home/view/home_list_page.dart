@@ -29,11 +29,11 @@ class _HomeListPageState extends State<HomeListPage> with AfterLayoutMixin {
         backgroundColor: ScenarioColors.accent,
         title: const Text(
           'Homes',
-          style: TextStyle(color: Colors.black),
+          style: TextStyle(color: ScenarioColors.dark),
         ),
         actions: [
           IconButton(
-            icon: const Icon(Icons.add, color: Colors.black),
+            icon: const Icon(Icons.add, color: ScenarioColors.dark),
             onPressed: () {
               Navigator.of(context).push(
                 MaterialPageRoute(
@@ -59,24 +59,24 @@ class _HomeListPageState extends State<HomeListPage> with AfterLayoutMixin {
             dismissThresholds: const {DismissDirection.endToStart: 0.9},
             direction: DismissDirection.endToStart,
             background: Container(
-              color: Colors.grey,
+              color: ScenarioColors.grey,
               child: Padding(
                 padding: const EdgeInsets.all(15),
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    const Icon(Icons.delete_rounded, color: Colors.black),
+                    const Icon(Icons.delete_rounded, color: ScenarioColors.dark),
                     const SizedBox(
                       height: 10,
                     ),
                     const Text('Remove',
                         style: TextStyle(
-                            color: Color(0xFF8D0F05),
+                            color: ScenarioColors.delete,
                             fontSize: 24,
                             fontWeight: FontWeight.bold)),
                     Text(home.name,
                         style: const TextStyle(
-                            color: Colors.black,
+                            color: ScenarioColors.dark,
                             fontSize: 24,
                             fontWeight: FontWeight.bold)),
                   ],
@@ -92,19 +92,19 @@ class _HomeListPageState extends State<HomeListPage> with AfterLayoutMixin {
                       actions: [
                         ElevatedButton(
                           style: ElevatedButton.styleFrom(
-                            backgroundColor: Colors.black,
+                            backgroundColor: ScenarioColors.dark,
                           ),
                           onPressed: () {
                             Navigator.pop(context);
                           },
                           child: const Text(
                             'Cancel',
-                            style: TextStyle(color: Colors.white),
+                            style: TextStyle(color: ScenarioColors.secondary),
                           ),
                         ),
                         ElevatedButton(
                           style: ElevatedButton.styleFrom(
-                            backgroundColor: const Color(0xFF8D0F05),
+                            backgroundColor: ScenarioColors.delete,
                           ),
                           onPressed: () async {
                             pressedRemove = true;
@@ -114,7 +114,7 @@ class _HomeListPageState extends State<HomeListPage> with AfterLayoutMixin {
                           },
                           child: const Text(
                             'Remove',
-                            style: TextStyle(color: Colors.white),
+                            style: TextStyle(color: ScenarioColors.secondary),
                           ),
                         ),
                       ],

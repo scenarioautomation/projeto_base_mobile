@@ -27,10 +27,10 @@ class _HomeAddPageState extends State<HomeAddPage> {
         backgroundColor: ScenarioColors.accent,
         title: const Text(
           'Add Home',
-          style: TextStyle(color: Colors.black),
+          style: TextStyle(color: ScenarioColors.dark),
         ),
         leading: IconButton(
-          icon: const Icon(Icons.keyboard_backspace_sharp, color: Colors.black),
+          icon: const Icon(Icons.keyboard_backspace_sharp, color: ScenarioColors.dark),
           onPressed: () {
             Navigator.pop(context);
           },
@@ -54,11 +54,11 @@ class _HomeAddPageState extends State<HomeAddPage> {
                       hintText: "Name",
                       focusedBorder: UnderlineInputBorder(
                         borderSide: BorderSide(
-                            color: ScenarioColors.accent), // Cor de foco
+                            color: ScenarioColors.accent),
                       ),
                       enabledBorder: UnderlineInputBorder(
                         borderSide:
-                            BorderSide(color: Colors.grey), // Cor padrão
+                            BorderSide(color: ScenarioColors.grey),
                       ),
                     ),
                     cursorColor: ScenarioColors.accent,
@@ -83,7 +83,7 @@ class _HomeAddPageState extends State<HomeAddPage> {
                       },
                       child: const Text(
                         'Create',
-                        style: TextStyle(color: Colors.black),
+                        style: TextStyle(color: ScenarioColors.dark),
                       ),
                     ),
                   ),
@@ -124,7 +124,7 @@ class _HomeAddPageState extends State<HomeAddPage> {
           },
           child: const Text(
             'OK',
-            style: TextStyle(color: Colors.black),
+            style: TextStyle(color: ScenarioColors.dark),
           ),
         ),],
       ),
