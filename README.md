@@ -5,10 +5,10 @@ O projeto contém uma tela principal com título "Casas" e um botão➕.
 <img src="https://drive.google.com/uc?export=view&id=1LTUdJYO-oz2Brv4uxFo-x9oCECKtf9Ix" alt="Imagem representando a descrição anterior" width="180" height="350">
 
 
-Ao clicar no ➕, uma tela para adicionar a casa é aberta, na qual o usuário precisa inserir o nome e a foto da Casa.
+Ao clicar no ➕, uma tela para adicionar a casa é aberta, na qual o usuário precisa inserir o nome e a foto da Casa.  
 <img src="https://drive.google.com/uc?export=view&id=1I41lze0r5bjpotCVy7jRjwUFYEd-4Ghz" alt="Imagem representando a descrição anterior" width="180" height="350">
 
-Ao clicar no botão "Criar", os dados da casa são salvos e ela é exibida na lista de casas.
+Ao clicar no botão "Criar", os dados da casa são salvos e ela é exibida na lista de casas.  
 <img src="https://drive.google.com/uc?export=view&id=1XhRfAIo0Xep4mXmcMBojmRlOPIy0r2eL" alt="Imagem representando a descrição anterior" width="60" height="30">
 
 ## Arquivos
@@ -77,7 +77,7 @@ O código está dividido em três pastas principais:
   ---
 
 ### 📌 Detalhes
-> **Versão do Flutter**: 3.13.4
-> **Versão do Dart**: 3.1.2
-> **JDK**: Amazon Corretto version 17.0.7
-> **Linguagem**: Kotlin e IOS
+> **Versão do Flutter**: 3.13.4  
+> **Versão do Dart**: 3.1.2  
+> **JDK**: Amazon Corretto version 17.0.7  
+> **Linguagem**: Kotlin e IOS  
