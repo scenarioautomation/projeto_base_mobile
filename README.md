@@ -1,7 +1,7 @@
 # Processo Seletivo - Mobile
 Este repositório oferece um projeto base para candidatos implementarem a proposta do **Processo Seletivo Scenario** para o time **Mobile**
 ## Sobre
-O projeto contém uma tela principal com título "Casas" e um botão➕.
+O projeto contém uma tela principal com título "Casas" e um botão➕.  
 <img src="https://drive.google.com/uc?export=view&id=1LTUdJYO-oz2Brv4uxFo-x9oCECKtf9Ix" alt="Imagem representando a descrição anterior" width="180" height="350">
 
 
