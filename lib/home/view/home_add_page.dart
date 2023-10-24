@@ -45,51 +45,52 @@ class _HomeAddPageState extends State<HomeAddPage> {
           key: _formKey,
           child: Container(
             margin: const EdgeInsets.symmetric(horizontal: 24, vertical: 16),
-            child: SingleChildScrollView(
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  TextFormField(
-                    controller: textEditingController,
-                    decoration:  InputDecoration(
-                      hintText: "add.name".tr(),
-                      focusedBorder: const UnderlineInputBorder(
-                        borderSide: BorderSide(
-                            color: ScenarioColors.accent),
-                      ),
-                      enabledBorder: const UnderlineInputBorder(
-                        borderSide:
-                            BorderSide(color: ScenarioColors.grey),
-                      ),
+            child: ListView(
+              children: [
+                TextFormField(
+                  controller: textEditingController,
+                  decoration:  InputDecoration(
+                    hintText: "add.name".tr(),
+                    focusedBorder: const UnderlineInputBorder(
+                      borderSide: BorderSide(
+                          color: ScenarioColors.accent),
                     ),
-                    cursorColor: ScenarioColors.accent,
-                  ),
-                  const SizedBox(
-                    height: 24,
-                  ),
-                  PictureFieldWidget(
-                    onSelect: (String imagePath) {
-                      selectedImage = imagePath;
-                    },
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.symmetric(vertical: 16),
-                    child: ElevatedButton(
-                      style: ElevatedButton.styleFrom(
-                        backgroundColor: ScenarioColors.accent,
-                      ),
-                      onPressed: () {
-                        _removeFocus();
-                        _addHome();
-                      },
-                      child: const Text(
-                        'add.create',
-                        style: TextStyle(color: ScenarioColors.dark),
-                      ).tr(),
+                    enabledBorder: const UnderlineInputBorder(
+                      borderSide:
+                          BorderSide(color: ScenarioColors.grey),
                     ),
                   ),
-                ],
-              ),
+                  cursorColor: ScenarioColors.accent,
+                ),
+                const SizedBox(
+                  height: 24,
+                ),
+                PictureFieldWidget(
+                  onSelect: (String imagePath) {
+                    selectedImage = imagePath;
+                  },
+                ),
+                Row(
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.symmetric(vertical: 16),
+                      child: ElevatedButton(
+                        style: ElevatedButton.styleFrom(
+                          backgroundColor: ScenarioColors.accent,
+                        ),
+                        onPressed: () {
+                          _removeFocus();
+                          _addHome();
+                        },
+                        child: const Text(
+                          'add.create',
+                          style: TextStyle(color: ScenarioColors.dark),
+                        ).tr(),
+                      ),
+                    ),
+                  ],
+                ),
+              ],
             ),
           ),
         ),

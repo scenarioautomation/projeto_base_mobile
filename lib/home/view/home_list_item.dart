@@ -26,6 +26,7 @@ class _HomeListItemState extends State<HomeListItem> {
               image: FileImage(
                 File(widget.home.imagePath),
               ),
+              fit: BoxFit.cover
             ),
           ),
           child: ClipRect(
